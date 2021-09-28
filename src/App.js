@@ -4,8 +4,6 @@ import LoginPage from "./components/loginPage/LoginPage";
 import './App.css';
 
 function App() {
-
-
   return (
     <div className="App">
       <header className="App-header">

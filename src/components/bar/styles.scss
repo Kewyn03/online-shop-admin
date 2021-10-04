@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root{
+  --nav-width: 40px;
+
+  /*===== Colores =====*/
+  --first-color: #0C5DF4;
+  --bg-color: #12192C;
+  --sub-color: #B6CEFC;
+  --white-color: #FFF;
+
+  /*===== Fuente y tipografia =====*/
+  --body-font: 'Poppins', sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: .875rem;
+
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4.8rem;
+  background-color: var(--bg-color);
+}
+body{
+
+
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: .5s;
+}
+h1{
+  margin: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+p{
+  margin: 0;
+}
+
+/*===== l NAV =====*/
+.l-navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: #fff;
+
+  transition: .5s;
+  z-index: var(--z-fixed);
+}
+
+/*===== NAV =====*/
+.nav{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+
+  &__link{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    padding: 1.5rem;
+    color: var(--white-color);
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover{
+      background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+      color: black;
+    }
+  }
+  &__icon{
+    font-size: 1rem;
+
+  }
+  &__name{
+    font-size: var(--small-font-size);
+  }
+  &__dropdownIcon {
+    align-items: center;
+    display: flex;
+    font-size: 10px !important;
+  }
+}
+
+
+/*Active links menu*/
+.active{
+  background: #0DB8DE;
+}
+
+.text {
+
+
+  height: 100%;
+  font-size: 45px;
+}
+.header-name {
+  display: flex;
+  align-items: center;
+  letter-spacing: -2px;
+  margin-left: 6rem;
+  color: #0DB8DE;
+
+}
+
+
+ion-icon {
+  font-size: 25px;
+
+}
+
+.dropbtn {
+  position: relative;
+  background-color: #0DB8DE;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  margin-left: auto;
+  margin-right: 3rem;
+
+
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+
+  display: none;
+  position: absolute;
+  background-color: var(--white-color);
+  min-width: 105px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+//.dropdown-content a {
+//  color: black;
+//  padding: 10px 10px;
+//  justify-content: center;
+//  text-decoration: none;
+//  align-items: center;
+//  display: flex;
+//}
+
+.dropdown-content p {
+  color: black;
+  padding: 12px 10px;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover,p:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  flex-direction: row;
+
+}
+
+.main-content.content {
+  height: 40rem;
+  font-size: 20px;
+  color:#0DB8DE ;
+}

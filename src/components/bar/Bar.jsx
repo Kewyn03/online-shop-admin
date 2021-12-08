@@ -1,8 +1,6 @@
 import React from 'react'
-import { Icon } from 'semantic-ui-react'
-import { Redirect } from "react-router";
+import { Redirect, useHistory } from "react-router";
 import { Link } from 'react-router-dom'
-import database from "../../database";
 
 
 import './styles.scss'
@@ -13,10 +11,18 @@ export default function Bar() {
 
 
     const [isRole, setIsRole] = React.useContext(AuthContext)
+    const history = useHistory()
 
-    // React.useEffect(() => {
-    //     (localStorage.getItem('role') === 'admin') ? setIsRole(true) : setIsRole(false)
-    // }, [])
+    React.useEffect(() => {
+        const linkColor = document.querySelectorAll('.nav__link')
+
+        function colorLink() {
+            linkColor.forEach(l => l.classList.remove('active'))
+            this.classList.add('active')
+        }
+
+        linkColor.forEach(l => l.addEventListener('click', colorLink))
+    }, )
 
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
@@ -36,21 +42,14 @@ export default function Bar() {
         }
     }
     /*===== LINK ACTIVE  =====*/
-    const linkColor = document.querySelectorAll('.nav__link')
 
-    function colorLink() {
-        linkColor.forEach(l => l.classList.remove('active'))
-        this.classList.add('active')
-    }
-
-    linkColor.forEach(l => l.addEventListener('click', colorLink))
 
     const logout = () => {
         setIsRole(false)
         sessionStorage.removeItem('role')
-        return (
-            <Redirect exact to='/'/>
-        )
+        history.push('/')
+
+
     }
 
 
@@ -86,6 +85,7 @@ export default function Bar() {
                 </div>
 
             </header>
+
             <body id="body-pd">
             <div className="l-navbar" id="navbar">
                 <nav className="nav">
@@ -98,12 +98,12 @@ export default function Bar() {
                             <Link exact to='/users' className="nav__link ">
                                 <ion-icon name="people-outline" className="nav__icon"/>
                             </Link>
-                            <Link exact to='items' className="nav__link">
+                            <Link exact to='/items' className="nav__link">
                                 <ion-icon name="cube-outline" className="nav__icon"/>
                             </Link>
-                            <a href="#" className="nav__link">
+                            <Link exact to='/orders' className="nav__link">
                                 <ion-icon name="bag-check-outline" className="nav__icon"/>
-                            </a>
+                            </Link>
 
                         </div>
                     </div>

@@ -5,13 +5,13 @@ import AddIcon from '@mui/icons-material/Add';
 import CreateIcon from '@mui/icons-material/Create';
 import Stack from '@mui/material/Stack';
 
-import { ItemList } from "./ItemList";
+import { OrdersList } from "./OrdersList";
 
 import './styles.scss'
 import { Alert, Modal } from "react-bootstrap";
-import { AddForm } from "./AddForm";
-import { EditItemForm } from "./EditItemForm"
-import { ItemContext } from "../../context/ItemContext";
+import { AddOrdersForm } from "./AddOrdersForm";
+import { EditOrdersForm } from "./EditOrdersForm"
+import { OrdersContext } from "../../context/OrdersContext";
 
 
 export default function ItemPage() {
@@ -21,9 +21,9 @@ export default function ItemPage() {
     const [showEdit, setShowEdit] = React.useState(false)
     const [showDelete, setShowDelete] = React.useState(false)
 
-    const {items, setItems} = React.useContext(ItemContext)
-    const {updateItem} = React.useContext(ItemContext)
-    const {deleteItem} = React.useContext(ItemContext)
+    const {orders, setOrders} = React.useContext(OrdersContext)
+    const {updateOrders} = React.useContext(OrdersContext)
+    const {deleteOrders} = React.useContext(OrdersContext)
 
     const handleShow = () => setShow(true)
     const handleShowEdit = () => setShowEdit(true)
@@ -47,17 +47,17 @@ export default function ItemPage() {
         // return () => {
         //     handleShowAlert()
         // }
-    }, [items])
+    }, [orders])
 
 
     return (
         <main>
             <div className='text-string'>
-                <div className='items-title'>Items List</div>
+                <div className='items-title'>Orders List</div>
                 <div className='buttons'>
                     <Stack direction="row" spacing={1.5}>
-                        <Button disabled={!items.find(item => item.isChecked === true)} className='button-styles' onClick={(e) => handleShowDelete(e)}
-                                value={items.map(item => item.parentId)} variant="contained" startIcon={<DeleteIcon/>}>
+                        <Button disabled={!orders.find(item => item.isChecked === true)} className='button-styles' onClick={(e) => handleShowDelete(e)}
+                                value={orders.map(item => item.parentId)} variant="contained" startIcon={<DeleteIcon/>}>
                             Delete
                         </Button>
                         <Button className='button-styles' onClick={(e) => handleShowEdit(e)} variant="contained"
@@ -74,7 +74,7 @@ export default function ItemPage() {
             <Alert className='alert-notification' show={showAlert} variant="success" onClose={() => setShowAlert(false)}
                    dismissible>Updated!</Alert>
 
-            <ItemList/>
+            <OrdersList/>
 
             <Modal className="modal" show={showDelete} onHide={handleClose} >
                 <Modal.Header closeButton>
@@ -87,7 +87,7 @@ export default function ItemPage() {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={handleClose} variant='secondary'>Close</Button>
-                    <Button onClick={() => deleteItem()} variant='contained'>Delete</Button>
+                    <Button onClick={() => deleteOrders()} variant='contained'>Delete</Button>
                 </Modal.Footer>
             </Modal>
 
@@ -98,7 +98,7 @@ export default function ItemPage() {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <EditItemForm/>
+                    <EditOrdersForm/>
                 </Modal.Body>
 
             </Modal>
@@ -111,7 +111,7 @@ export default function ItemPage() {
                 </Modal.Header>
                 <Modal.Body>
 
-                    <AddForm/>
+                    <AddOrdersForm/>
 
                 </Modal.Body>
             </Modal>

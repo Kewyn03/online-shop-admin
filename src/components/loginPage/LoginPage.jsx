@@ -1,10 +1,10 @@
-import React,{useContext} from 'react'
+import React from 'react'
 
 import './loginPage.scss'
-import { Redirect } from "react-router";
-import { useAlert} from "react-alert";
-import {useHistory} from 'react-router-dom'
+import { useAlert } from "react-alert";
+import { useHistory } from 'react-router-dom'
 import { AuthContext } from "../../context/AuthContext";
+
 export default function LoginPage() {
 
     const [isRole,setIsRole] = React.useContext(AuthContext)
@@ -16,6 +16,7 @@ export default function LoginPage() {
         const [minLengthError,setMinLengthError] = React.useState(false)
         const [isPasswordError ,setIsPasswordError] = React.useState(false)
         const [inputValid,setInputValid] = React.useState(false)
+
 
 
 
@@ -38,7 +39,7 @@ export default function LoginPage() {
         },[value])
 
         React.useEffect(() => {
-            if(isEmpty || minLengthError || isPasswordError) {
+            if(isEmpty || minLengthError || isPasswordError ) {
                 setInputValid(false)
             } else {
                 setInputValid(true)
@@ -50,7 +51,8 @@ export default function LoginPage() {
             minLengthError,
             isEmpty,
             isPasswordError,
-            inputValid
+            inputValid,
+
         }
     }
 
@@ -122,6 +124,7 @@ export default function LoginPage() {
                                 <div className="form-group">
                                     {(login.isDirty && login.isEmpty) && <div style={{color:'red'}}>Field cannot be empty!</div> }
                                     {(login.isDirty && login.minLengthError) && <div style={{color:'red'}}>Length is not correct</div> }
+
                                     <label className="form-control-label">USERNAME</label>
                                     <input value={login.value} type="text" className="form-control" onChange={e => login.onChange(e)} onBlur={e => login.onBlur(e)}/>
                                 </div>
@@ -134,9 +137,7 @@ export default function LoginPage() {
                                 </div>
 
                                 <div className="col-lg-12 loginbttm">
-                                    <div className="col-lg-6 login-btm login-text">
 
-                                    </div>
                                     <div className="col-lg-6 login-btm login-button">
                                         <button disabled={!login.inputValid || !password.inputValid} type="submit" className="btn btn-outline-primary"
                                         onClick={e => login.onClick(e) && password.onClick(e)}>LOGIN</button>

@@ -1,22 +1,81 @@
+
+main {
+
+}
+
+.form-modal {
+    background-color: #1A2226 !important;
+}
+
+
 .text-string {
   display: flex;
   text-align: center;
   vertical-align: center;
   margin-left: 6.2rem;
-  margin-top: 2rem;
+
   padding-bottom: 5px;
-  border-bottom: 1px solid #1976d2;
+
 }
 
 .items-title {
+
   font-size: 40px;
-  color: #1976d2;
+  color: #0692db;
+
 }
 
 
 
 .buttons {
+  display: flex!important;
+  align-items: center;
   margin-right: 1rem;
 
   margin-left: auto;
 }
+
+.button-styles {
+  background-color: #0692db !important;
+}
+
+.table {
+  margin-left: 5rem;
+  background-color: #a29f9f;
+  width: 94% !important;
+  border: black 2px solid;
+
+}
+
+.alert-notification {
+  margin-left: 5rem;
+  margin-right: 0.75rem;
+}
+
+.table-header {
+  color: #0692db;
+  text-align: center;
+  border-bottom: white 3px solid !important;
+  cursor: pointer;
+}
+
+.table-checkbox {
+  cursor: pointer;
+}
+
+.table-body {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.table-striped {
+
+  background-color: #0C5DF4;
+}
+
+.table-hover {
+  background-color: black;
+}
+
+
+

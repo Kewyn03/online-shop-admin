@@ -1,25 +1,50 @@
+* {
+
+}
+
 body {
-  background: #222D32;
+  background-color: #222D32 !important; ;
   font-family: 'Roboto', sans-serif;
 }
 
 .login-box {
-  margin-top: 75px;
+  margin-top: 75px !important;
   height: auto;
   background: #1A2226;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)  ;
+}
+
+.modal-content {
+  background-color: #222D32 !important;
+}
+
+.modal-header {
+  color: #0692db;
+  border-bottom: 1px solid #0692db !important;
+}
+
+.MuiButton-secondary {
+  color: #FFFFFF !important;
+}
+
+.close {
+  color: #0692db !important;
+}
+
+.modal-body {
+  color: #FFFFFF;
+
 }
 
 
 .login-title {
-  margin-top: 15px;
-  text-align: center;
+  text-align: center ;
   font-size: 30px;
   letter-spacing: 2px;
   margin-top: 15px;
   font-weight: bold;
-  color: #ECF0F5;
+  color: #0692db;
 }
 
 .login-form {
@@ -28,29 +53,29 @@ body {
 }
 
 input[type=text] {
-  background-color: #1A2226;
+  background-color: #1A2226 !important;
   border: none;
-  border-bottom: 2px solid #0DB8DE;
-  border-top: 0px;
-  border-radius: 0px;
-  font-weight: bold;
-  outline: 0;
-  margin-bottom: 20px;
-  padding-left: 0px;
-  color: #ECF0F5;
+  border-bottom: 2px solid #0692db ;
+  border-top: 0px ;
+  border-radius: 0px ;
+  font-weight: bold ;
+  outline: 0 !important;
+  margin-bottom: 20px ;
+  padding-left: 0px ;
+  color: #ECF0F5 !important;
 }
 
 input[type=password] {
-  background-color: #1A2226;
-  border: none;
-  border-bottom: 2px solid #0DB8DE;
+  background-color: #1A2226 !important;
+  border: none ;
+  border-bottom: 2px solid #0692db ;
   border-top: 0px;
   border-radius: 0px;
   font-weight: bold;
-  outline: 0;
+  outline: 0 !important;
   padding-left: 0px;
   margin-bottom: 20px;
-  color: #ECF0F5;
+  color: #ECF0F5 !important;
 }
 
 .form-group {
@@ -62,10 +87,10 @@ input[type=password] {
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-bottom: 2px solid #0DB8DE;
+  border-bottom: 2px solid #0692db;
   outline: 0;
   background-color: #1A2226;
-  color: #ECF0F5;
+  color: #222D32;
 }
 
 input:focus {
@@ -85,8 +110,8 @@ label {
 }
 
 .btn-outline-primary {
-  border-color: #0DB8DE;
-  color: #0DB8DE;
+  border-color: #0692db;
+  color: #0692db;
   border-radius: 0px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -95,8 +120,9 @@ label {
 }
 
 .btn-outline-primary:hover {
-  background-color: #0DB8DE;
+  background-color: #0692db;
   right: 0px;
+  color: #FFFFFF ;
   cursor: pointer;
 }
 
@@ -106,6 +132,7 @@ label {
 
 .login-button {
   padding-right: 0px;
+  padding-left: 0px;
   text-align: left;
   margin-bottom: 25px;
 }
